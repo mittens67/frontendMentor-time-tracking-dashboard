@@ -1,0 +1,171 @@
+@use "../styles/variables.scss" as variables;
+
+.card {
+  height: 26rem;
+  width: 26rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  &-banner {
+    height: 18%;
+    padding: 2rem;
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      position: absolute;
+      display: inline-block;
+      right: 1.5rem;
+      top: -1rem;
+      height: 8rem;
+      width: 8rem;
+    }
+  }
+  &-content {
+    height: 85%;
+    border-radius: 1.5rem;
+    background-color: variables.$dark-blue;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      background-color: variables.$dark-blue-light;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+
+      img {
+        height: 0.5rem;
+      }
+    }
+    &__text {
+      display: flex;
+      flex-direction: column;
+    }
+    &__this-week {
+      font-size: 5.8rem;
+      font-weight: 200;
+    }
+    &__last-week {
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: variables.$pale-blue;
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .card {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 1.2rem;
+
+    &-banner {
+      height: 10%;
+      padding: 1.5rem;
+
+      img {
+        position: absolute;
+        display: inline-block;
+        right: 1.5rem;
+        top: -1rem;
+        height: 6rem;
+        width: 6rem;
+      }
+    }
+    &-content {
+      height: 90%;
+      border-radius: 1.2rem;
+      padding: 2rem;
+      gap: 2rem;
+
+      &__header {
+        h2 {
+          font-size: 1.4rem;
+          font-weight: 400;
+        }
+
+        img {
+          height: 0.4rem;
+        }
+      }
+
+      &__this-week {
+        font-size: 4rem;
+        font-weight: 200;
+      }
+      &__last-week {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    height: 16rem;
+
+    &-banner {
+      height: 10%;
+      padding: 1.5rem;
+
+      img {
+        right: 1.5rem;
+        top: -1rem;
+        height: 6rem;
+        width: 6rem;
+      }
+    }
+
+    &-content {
+      height: 95%;
+      border-radius: 1.1rem;
+      padding: 2rem;
+      gap: 2rem;
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        img {
+          height: 0.4rem;
+        }
+      }
+      &__text {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      &__this-week {
+        font-size: 3rem;
+        font-weight: 200;
+      }
+      &__last-week {
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: variables.$pale-blue;
+        margin-top: 1rem;
+      }
+    }
+  }
+}

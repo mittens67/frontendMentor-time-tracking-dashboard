@@ -1,0 +1,162 @@
+@use "../styles/variables.scss" as variables;
+
+header {
+  width: 30rem;
+  height: 55rem;
+}
+
+.menu {
+  background-color: variables.$dark-blue;
+  border-radius: 1rem;
+  &-profile {
+    padding: 2.7rem;
+    height: 70%;
+    background-color: variables.$blue;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    &__img {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+      border: 0.3rem solid variables.$white;
+    }
+    &__content {
+      p {
+        font-size: 1.7rem;
+        color: variables.$pale-blue;
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+        font-size: 5rem;
+        font-weight: 300;
+      }
+    }
+  }
+  &-nav {
+    height: 30%;
+    padding: 2.7rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    & a {
+      color: variables.$desaturated-blue;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        color: variables.$white;
+      }
+
+      &.active {
+        color: variables.$white;
+      }
+    }
+  }
+}
+
+.active {
+  color: variables.$white;
+}
+
+@media (max-width: 1440px) {
+  header {
+    width: 25rem;
+    height: 43rem;
+  }
+  .menu {
+    &-profile {
+      padding: 2.2rem;
+      gap: 4rem;
+      &__img {
+        width: 7rem;
+        height: 7rem;
+      }
+      &__content {
+        p {
+          font-size: 1.5rem;
+        }
+        h1 {
+          font-size: 4rem;
+        }
+      }
+    }
+    &-nav {
+      padding: 2.2rem;
+
+      & a {
+        font-size: 1.7rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    width: 90%;
+    height: 25rem;
+  }
+  .menu {
+    &-profile {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+
+      &__img {
+        width: 7rem;
+        height: 7rem;
+      }
+
+      &__content {
+        p {
+          font-size: 1.4rem;
+          margin-bottom: 0.5rem;
+        }
+        h1 {
+          font-size: 4rem;
+        }
+      }
+    }
+    &-nav {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  header {
+    height: 20rem;
+  }
+
+  .menu {
+    &-profile {
+      gap: 1.5rem;
+      &__img {
+        width: 6rem;
+        height: 6rem;
+      }
+      &__content {
+        p {
+          font-size: 1.3rem;
+          margin-bottom: 0.5rem;
+        }
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+    &-nav {
+      height: 30%;
+      padding: 1.8rem;
+
+      & a {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
